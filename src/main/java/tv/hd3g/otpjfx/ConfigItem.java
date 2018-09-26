@@ -44,7 +44,8 @@ public class ConfigItem {
 	
 	String getOneTimePassword(TimeBasedOneTimePasswordGenerator tbot_pg, Date date) {
 		try {
-			return String.format("%06d", tbot_pg.generateOneTimePassword(getSecretKey(), date));
+			String value = String.format("%06d", tbot_pg.generateOneTimePassword(getSecretKey(), date));
+			return value.substring(0, 3) + " " + value.substring(3);
 		} catch (InvalidKeyException e) {
 			throw new RuntimeException("Invalid secret for " + name + ": \"" + secret + "\"", e);
 		}

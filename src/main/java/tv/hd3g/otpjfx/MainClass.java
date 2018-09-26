@@ -33,7 +33,7 @@ import com.eatthepath.otp.TimeBasedOneTimePasswordGenerator;
 public class MainClass {
 	
 	public static void main(String[] args) throws Exception {
-		
+		// TODO2 remove log4j2
 		Yaml yaml = new Yaml(new Constructor(ConfigItem.class));
 		FileReader fr = new FileReader(new File(System.getProperty("configfile", "config.yml")));
 		
